@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link href="../../../_app/immutable/entry/start.Bqulhi1r.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/C8oBPnJ7.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/bHLVAwut.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/xZNltI10.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.lsgNnQei.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DJFrmvqi.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DP2QD1fS.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Cy9Mccxe.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CzPd5gKr.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/0.jafPK9O7.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/qG3e6YRF.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/8.DK0vv7PB.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/BkQNwEeE.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DCgbPunO.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Bfy00a_d.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CXW3gfx_.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/GqNi0l0v.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>Triage: duplicates share a demonstrated cause · support kb</title>
+		<link href="../../../_app/immutable/assets/runbook.Co0e3Vkd.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/RenderStamp.CMZ6TBbc.css" rel="stylesheet">
+		<link href="../../../_app/immutable/assets/DedupeExplorer.C3mwiGDj.css" rel="stylesheet"></head><body data-sveltekit-preload-data="hover"><div style="display:contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">Triage: duplicates share a demonstrated cause</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Swiatlomost with AI harness</b></span> <span class="status current svelte-e2jw2j">current</span> <span class="svelte-e2jw2j">reviewed 2026-10-30 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><h2>Current rule</h2> <p>This guide supersedes the old subject-only procedure, which followed <a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>, reviewed in June 2024.
+That decision is preserved as history; <a href="/kb/decisions/0002-dedupe-by-cause">decision 0002</a> records the correction.</p> <ol><li>Keep each incoming report and its ID. Deduplicate export overlap by ID, not by subject.</li> <li>Read the body and identify tenant, locale, form version, channel and expected versus actual behavior.</li> <li>Compare the demonstrated cause with an open issue. For this date incident run causeOf and sameCause.</li> <li>Merge only when causes match. Matching subjects alone are insufficient.</li> <li>If tenant or cause is unknown, keep it separate and ask for reproduction evidence.</li> <li>Keep reporting and classification uncertainties visible. Do not force anomalous symptoms into a confident diagnosis.</li></ol> <h2>Test the rule</h2> <div class="try svelte-gq0h2h"><!--[--><fieldset class="svelte-gq0h2h"><legend>report A</legend> <select aria-label="tenant"><!--[--><option selected="">alder.physio</option><option>copper.studio</option><option>harbour.dental</option><option>kettle.books</option><option>lantern.row</option><option>long.table</option><option>morrow.tax</option><option>nine.lanterns</option><option>pale.harbour</option><option>ridge.clinic</option><option>stone.and.sons</option><!--]--></select> <select aria-label="channel"><!--[--><option>app</option><option>email</option><option selected="">form</option><!--]--></select> <input value="Booking on the wrong date" aria-label="subject"/> <code>hint</code></fieldset><fieldset class="svelte-gq0h2h"><legend>report B</legend> <select aria-label="tenant"><!--[--><option>alder.physio</option><option>copper.studio</option><option>harbour.dental</option><option selected="">kettle.books</option><option>lantern.row</option><option>long.table</option><option>morrow.tax</option><option>nine.lanterns</option><option>pale.harbour</option><option>ridge.clinic</option><option>stone.and.sons</option><!--]--></select> <select aria-label="channel"><!--[--><option>app</option><option>email</option><option selected="">form</option><!--]--></select> <input value="Booking on the wrong date" aria-label="subject"/> <code>parser</code></fieldset><!--]--> <p class="verdict svelte-gq0h2h">different causes — keep apart</p></div> <table><thead><tr><th>case</th><th>same subject</th><th>same cause</th></tr></thead><tbody><!--[--><tr><td>app vs email, same tenant</td><td>no</td><td class="svelte-gq0h2h dup">yes</td></tr><tr><td>same subject, same tenant, different channel</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><tr><td>same subject, same channel, different tenant</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><tr><td>different subject, same way in</td><td>no</td><td class="svelte-gq0h2h dup">yes</td></tr><tr><td>no tenant on file</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><!--]--></tbody></table><!----> <p>Same tenant with app and email may share a cause even when the words differ.
+The same tenant with form and app may have different causes despite identical words.
+Different tenants can have the same cause; always check configuration.</p> <h2>Freshness</h2> <p>Read the <a href="/kb/incidents/4471-review">signed #4471 review</a> and check the current queue before acting.
+Receipt time measures when a report arrived; merge time measures when the desk grouped it.
+Do not close an issue merely because the merged parent says “known”.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-0CJR-YBSK</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_orsm7l = {
+						base: new URL("../../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../../_app/immutable/entry/start.Bqulhi1r.js"),
+						import("../../../_app/immutable/entry/app.lsgNnQei.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div></body></html>

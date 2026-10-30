@@ -1,0 +1,33 @@
+---
+layout: runbook
+title: '#4471 · merged date reports require separate fixes'
+owner: Swiatlomost with AI harness
+status: split — review required
+reviewed: '2026-10-30'
+signature: 'v1.eyJzdWIiOiIyNDU1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNjU1NjEsImV4cCI6MTc5MzQ1MTk2MX0.ADVIxP_I39kN-WgAev9ODxw6CUNiJwB1CFv8BpUUnYU'
+---
+
+<script>
+ import CauseTable from '#lib/kb/CauseTable.svelte';
+ import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+ import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Correction to the September summary
+
+The previous prose said “one issue, one fix queued”. The computed view contradicts that:
+the tenant-aware classifier finds separate parser and hint mechanisms.
+“Known” did not mean all reported behavior was understood, and the export proves no deployed fix.
+See the [full signed investigation](/kb/incidents/4471-review) for counts, report IDs,
+unexplained symptoms, triage changes and next steps.
+
+<CauseTable ticket={4471} />
+
+## Received versus merged
+
+<QueueTimeline ticket={4471} />
+
+The July merge spike is not incident onset. Check receipt times before drawing that conclusion.
+This is the October 4 export, not a live desk; reconcile new reports before using its counts as current.
+
+<RenderStamp {signature} />

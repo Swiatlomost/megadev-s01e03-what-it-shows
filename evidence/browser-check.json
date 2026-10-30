@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "renderedDeskRef": "DR-0CJR-YBSK",
+  "pagesChecked": 6,
+  "interactiveExplorer": true,
+  "pageErrors": [],
+  "httpFailures": [],
+  "externalRequests": [],
+  "mobileViewport": {
+    "width": 390,
+    "scroll": 390
+  },
+  "originalDecisionUnchanged": true,
+  "snapshotHasInlineCssAndNoScripts": true
+}

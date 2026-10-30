@@ -1,0 +1,43 @@
+---
+layout: runbook
+title: 'Triage: duplicates share a demonstrated cause'
+owner: Swiatlomost with AI harness
+status: current
+reviewed: '2026-10-30'
+signature: 'v1.eyJzdWIiOiIyNDU1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNjU1NjEsImV4cCI6MTc5MzQ1MTk2MX0.ADVIxP_I39kN-WgAev9ODxw6CUNiJwB1CFv8BpUUnYU'
+---
+
+<script>
+ import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+ import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Current rule
+
+This guide supersedes the old subject-only procedure, which followed
+[decision 0001](/kb/decisions/0001-dedupe-by-subject), reviewed in June 2024.
+That decision is preserved as history; [decision 0002](/kb/decisions/0002-dedupe-by-cause)
+records the correction.
+
+1. Keep each incoming report and its ID. Deduplicate export overlap by ID, not by subject.
+2. Read the body and identify tenant, locale, form version, channel and expected versus actual behavior.
+3. Compare the demonstrated cause with an open issue. For this date incident run causeOf and sameCause.
+4. Merge only when causes match. Matching subjects alone are insufficient.
+5. If tenant or cause is unknown, keep it separate and ask for reproduction evidence.
+6. Keep reporting and classification uncertainties visible. Do not force anomalous symptoms into a confident diagnosis.
+
+## Test the rule
+
+<DedupeExplorer />
+
+Same tenant with app and email may share a cause even when the words differ.
+The same tenant with form and app may have different causes despite identical words.
+Different tenants can have the same cause; always check configuration.
+
+## Freshness
+
+Read the [signed #4471 review](/kb/incidents/4471-review) and check the current queue before acting.
+Receipt time measures when a report arrived; merge time measures when the desk grouped it.
+Do not close an issue merely because the merged parent says “known”.
+
+<RenderStamp {signature} />

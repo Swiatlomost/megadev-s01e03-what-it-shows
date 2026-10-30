@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "raw": 427,
+  "unique": 412,
+  "duplicates": 15,
+  "groups": [
+    {
+      "cause": "parser",
+      "count": 379
+    },
+    {
+      "cause": "hint",
+      "count": 33
+    }
+  ],
+  "mismatches": 38,
+  "anomalyIds": [
+    "R-41202",
+    "R-41209",
+    "R-41236",
+    "R-41344",
+    "R-41620"
+  ],
+  "dedupeCases": [
+    true,
+    false,
+    false,
+    true,
+    false
+  ]
+}
