@@ -2,9 +2,12 @@
 
 Investigation of support ticket **#4471**, based on the course's **2026-10-04 KB export**.
 
-**Stage 1 accepted by the course: both tickets are real. Final acceptance pending.**
+**Solved: the course accepted the final submission on 2026-10-30 at 13:44:34 UTC.**
 The later desk update says #4471 closed October 5: parser FIXED, hint WON'T FIX (booking-v3 retired).
 Our issue closure reasons preserve that distinction; no independent deployment test is claimed.
+
+Course result: [`evidence/course-result.json`](evidence/course-result.json).
+Private course debrief (enrolled owner): https://hq.mega.dev/challenges/what-it-shows#debrief
 
 ## Deliverables
 

@@ -1,0 +1,13 @@
+{
+  "challenge": "S01E03",
+  "status": "solved",
+  "solvedAt": "2026-10-30T13:44:34.000Z",
+  "solutionCommit": "f7bb395f7301321b5e866f03465e14a05a0e7ae7",
+  "repo": "https://github.com/Swiatlomost/megadev-s01e03-what-it-shows",
+  "debrief": "https://hq.mega.dev/challenges/what-it-shows#debrief",
+  "stages": [
+    "Tickets accepted at first submission",
+    "Later desk update recorded; parser closed completed, hint closed not_planned",
+    "Final submission accepted"
+  ]
+}
