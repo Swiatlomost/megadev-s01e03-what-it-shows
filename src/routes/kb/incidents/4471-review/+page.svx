@@ -40,6 +40,14 @@ The component below uses the unmodified exported classifier and tenant directory
 
 <InvestigationEvidence />
 
+## Filed tickets
+
+- [Parser issue: #1](https://github.com/Swiatlomost/megadev-s01e03-what-it-shows/issues/1).
+- [Booking-v3 hint issue: #2](https://github.com/Swiatlomost/megadev-s01e03-what-it-shows/issues/2).
+
+The table above computes the report counts and links to each separate issue.
+These issues record work to be done; neither is a claim that a product fix has shipped.
+
 ## The queue has not stopped
 
 <QueueTimeline ticket={4471} />

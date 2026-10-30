@@ -2,7 +2,7 @@
 
 Investigation of support ticket **#4471**, based on the course's **2026-10-04 KB export**.
 
-**Local work prepared; publication and course acceptance are pending.** No deployed product fix is claimed.
+**Prepared and locally verified; submitted publication is awaiting course review.** No deployed product fix is claimed.
 
 ## Deliverables
 
@@ -11,7 +11,8 @@ Investigation of support ticket **#4471**, based on the course's **2026-10-04 KB
 - Fully rendered static KB with client-side components: [`build/kb/incidents/4471-review/index.html`](build/kb/incidents/4471-review/index.html).
 - Auditable cause membership: [`evidence/membership.json`](evidence/membership.json).
 - Reproducible assertions: [`evidence/check.json`](evidence/check.json).
-- Issue drafts: [parser](issue-drafts/parser.md), [hint](issue-drafts/hint.md). GitHub issues are not created yet.
+- Public issues: [parser — 379 reports (#1)](https://github.com/Swiatlomost/megadev-s01e03-what-it-shows/issues/1), [hint — 33 reports (#2)](https://github.com/Swiatlomost/megadev-s01e03-what-it-shows/issues/2).
+- Versioned issue bodies: [parser](issue-drafts/parser.md), [hint](issue-drafts/hint.md).
 
 ## Findings
 

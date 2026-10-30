@@ -1,6 +1,9 @@
 <script lang="ts">
   import reports from '#lib/data/reports-4471.json';
   import notes from '#lib/data/desk-notes.json';
+  import filedIssues from '#lib/data/filed-issues.json';
+  const issueFor = (cause: string): { number: number; url: string } | undefined =>
+    (filedIssues as Record<string, { number: number; url: string }>)[cause];
   import { groupByCause, readAs, ticketCause, uniqueById, type Report } from '#lib/kb/causes';
   import { tenantOf } from '#lib/kb/locales';
 
@@ -28,13 +31,20 @@
   </thead>
   <tbody>
     {#each groups as g (g.cause)}
+      {@const issue = issueFor(g.cause)}
       <tr class:wrong={g.cause !== owner}>
         <td><code>{g.cause}</code></td>
         <td>{g.reports.length}</td>
         <td class="tags">{tags(g)}</td>
         <td>{g.tenants}</td>
         <td>{g.firstSeen} → {g.lastSeen}</td>
-        <td>{g.cause === owner ? `#${ticket}` : 'not this ticket — no ticket of its own'}</td>
+        <td>
+          {#if issue}
+            <a href={issue.url}>GitHub #{issue.number}</a> · split from desk #{ticket}
+          {:else}
+            {g.cause === owner ? `#${ticket}` : 'not this ticket — no ticket of its own'}
+          {/if}
+        </td>
       </tr>
     {/each}
   </tbody>
