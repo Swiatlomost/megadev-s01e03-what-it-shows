@@ -19,6 +19,9 @@ try {
   assert.deepEqual(DEDUPE_CASES.map(c=>sameCause(c.a,tenantOf(c.a),c.b,tenantOf(c.b))),[true,false,false,true,false]);
   assert.equal(dayFirst('en-US'),false);
   assert.equal(dayFirst('pl-PL'),true);
+  const {default:deskUpdate} = await server.ssrLoadModule('/src/lib/data/desk-update.json');
+  assert.equal(deskUpdate.closedOn,'2026-10-05');
+  assert.deepEqual(deskUpdate.outcomes.map(x=>[x.cause,x.status,x.stateReason]),[['parser','FIXED','completed'],['hint',"WON'T FIX",'not_planned']]);
   const membership=groups.flatMap(g=>g.reports.map(r=>r.id));
   assert.equal(new Set(membership).size,412);
   for(const r of raw) assert.deepEqual(r,reports.find(u=>u.id===r.id));

@@ -1,8 +1,8 @@
 ---
 layout: runbook
-title: '#4471 · merged date reports require separate fixes'
+title: '#4471 · closed with separate parser and hint outcomes'
 owner: Swiatlomost with AI harness
-status: split — review required
+status: closed — mixed outcomes
 reviewed: '2026-10-30'
 signature: 'v1.eyJzdWIiOiIyNDU1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNjU1NjEsImV4cCI6MTc5MzQ1MTk2MX0.ADVIxP_I39kN-WgAev9ODxw6CUNiJwB1CFv8BpUUnYU'
 ---
@@ -11,7 +11,10 @@ signature: 'v1.eyJzdWIiOiIyNDU1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpY
  import CauseTable from '#lib/kb/CauseTable.svelte';
  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+ import DeskUpdate from '#lib/kb/DeskUpdate.svelte';
 </script>
+
+<DeskUpdate />
 
 ## Correction to the September summary
 
@@ -28,6 +31,7 @@ unexplained symptoms, triage changes and next steps.
 <QueueTimeline ticket={4471} />
 
 The July merge spike is not incident onset. Check receipt times before drawing that conclusion.
-This is the October 4 export, not a live desk; reconcile new reports before using its counts as current.
+The table is the October 4 export, not a live desk; its counts remain historical.
+The later desk update above says October 5 closure: parser fixed, hint won't fix because the form was retired.
 
 <RenderStamp {signature} />

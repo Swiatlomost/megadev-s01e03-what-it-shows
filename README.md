@@ -2,7 +2,9 @@
 
 Investigation of support ticket **#4471**, based on the course's **2026-10-04 KB export**.
 
-**Prepared and locally verified; submitted publication is awaiting course review.** No deployed product fix is claimed.
+**Stage 1 accepted by the course: both tickets are real. Final acceptance pending.**
+The later desk update says #4471 closed October 5: parser FIXED, hint WON'T FIX (booking-v3 retired).
+Our issue closure reasons preserve that distinction; no independent deployment test is claimed.
 
 ## Deliverables
 
@@ -29,6 +31,17 @@ The original accepted decision 0001 is preserved byte-for-byte. Decision 0002 an
 current triage guide explain why matching subject lines cannot establish duplicate causes.
 
 The export does not prove all reports belong to sched-prod, or that a report equals an affected person.
+
+## Later desk update and closure
+
+The course page supplies a later engineering update, observed October 30, for October 5:
+
+- Parser: **FIXED** — `fix(dates): parse dd/mm for eu locales`. Issue #1 closes as **completed**.
+- Hint: **WON'T FIX** — `booking-v3 form retired`. Issue #2 closes as **not planned**, not as fixed.
+
+See `src/lib/data/desk-update.json` and the rendered DeskUpdate component. The export ZIP itself
+has not changed. Historical counts and unexplained symptoms are retained; a closed parent
+is not proof that all behavior was repaired.
 
 ## Reproduce
 

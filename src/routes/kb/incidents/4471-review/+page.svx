@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 review · split by cause, not by subject'
 owner: Swiatlomost with AI harness
-status: reviewed
+status: closed — mixed outcomes
 reviewed: '2026-10-30'
 signature: 'v1.eyJzdWIiOiIyNDU1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzNjU1NjEsImV4cCI6MTc5MzQ1MTk2MX0.ADVIxP_I39kN-WgAev9ODxw6CUNiJwB1CFv8BpUUnYU'
 ---
@@ -13,11 +13,15 @@ signature: 'v1.eyJzdWIiOiIyNDU1IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpY
   import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
   import InvestigationEvidence from '#lib/kb/InvestigationEvidence.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import DeskUpdate from '#lib/kb/DeskUpdate.svelte';
 </script>
 
 This review corrects the [original incident](/kb/incidents/4471).
 The export is a snapshot from **2026-10-04**, not the live support queue.
-Do not interpret “known” or “fix queued” as a verified fix.
+Do not interpret the export's “known” or “fix queued” as a verified fix.
+The later desk update below supplies the current, different outcome for each problem.
+
+<DeskUpdate />
 
 ## Two demonstrated mechanisms
 
@@ -28,9 +32,9 @@ R-41200 and R-41205 show this path. Morrow Tax uses fr-FR and booking-v2 even th
 R-41205's browser is en-US and intake tagged it hint.
 
 **Hint:** booking-v3 prints MM/DD/YYYY while the tenant's form interprets input day first.
-Following the displayed instructions produces the wrong date. Correct the hint to match the
-form's parsing contract, or make both honor the same explicit format. This is not fixed by
-only changing the shared invite parser.
+Following the displayed instructions produced the wrong date. The original repair proposal was
+to make the hint and parsing agree. The later desk update says booking-v3 was retired instead:
+this problem is WON'T FIX, not a second parser fix.
 
 Compute the split from unique IDs, tenant locale and form version, and channel.
 Use Intl.DateTimeFormat for date order; do not hard-code a list of “EU” locales.
@@ -46,15 +50,16 @@ The component below uses the unmodified exported classifier and tenant directory
 - [Booking-v3 hint issue: #2](https://github.com/Swiatlomost/megadev-s01e03-what-it-shows/issues/2).
 
 The table above computes the report counts and links to each separate issue.
-These issues record work to be done; neither is a claim that a product fix has shipped.
+These issues preserve the historical problem split and are closed according to the desk's
+separate dispositions above, not because both mechanisms were repaired.
 
-## The queue has not stopped
+## Historical queue: receipt time versus merge time
 
 <QueueTimeline ticket={4471} />
 
-Reports continued after the bulk merge. A queue update is not evidence of resolution.
-Keep the parser and hint issues open until an owner supplies a fix and regression evidence.
-Use receipt timestamps to assess impact and merge timestamps to assess triage.
+Reports continued after the bulk merge, through the October 4 snapshot. A queue update alone
+was not evidence of resolution. The later October 5 engineering update, not the merge spike,
+is the source for closing our issues. Use receipt timestamps to assess impact and merge timestamps to assess triage.
 
 ## Triage correction
 
@@ -71,7 +76,8 @@ The accepted 2024 decision remains unchanged as history, not current guidance.
 ## Actions and boundaries
 
 - Track parser and hint as separate GitHub issues, with the computed membership lists above.
-- Validate both fixes independently with ambiguous dates and day-first tenants.
+- Parser: the desk reports a fix; independent ambiguous-date regression testing was not supplied.
+- Hint: the form was retired, so close as not planned rather than claiming a repaired hint.
 - Preserve the unexplained reports and investigate their raw data; do not silently discard them.
 - Reconcile with the desk before treating this export as current; publish subsequent deltas and review dates.
 - Do not estimate affected people from report count: a report is not a unique person.
